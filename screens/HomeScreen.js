@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import i18next from 'i18next';
 
 import { MonoText } from '../components/StyledText';
 
@@ -42,7 +43,7 @@ export default class HomeScreen extends React.Component {
             </View>
 
             <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
+              {i18next.t("key")}
             </Text>
           </View>
 

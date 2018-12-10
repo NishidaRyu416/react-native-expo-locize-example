@@ -13,9 +13,13 @@
   "dependencies": {
     "@expo/samples": "2.1.1",
     "expo": "^31.0.2",
+    "i18next": "^12.1.0",
+    "i18next-locize-backend": "^1.7.0",
+    "lodash": "^4.17.11",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "react-navigation": "^2.18.2"
+    "react-navigation": "^2.18.2",
+    "subtag": "^0.5.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",

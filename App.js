@@ -1,15 +1,23 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
+import initI18n from './initI18n';
+
 import AppNavigator from './navigation/AppNavigator';
 
 export default class App extends React.Component {
   state = {
-    isLoadingComplete: false,
+    isLoadingResourceComplete: false,
+    isLoadingI18nComplete: false,
   };
 
+  constructor(props) {
+    super(props);
+    initI18n(() => this.setState({ isLoadingI18nComplete: true }))
+  }
+
   render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+    if (!this.state.isLoadingResourceComplete || !this.state.isLoadingI18nComplete ) {
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
@@ -50,7 +58,7 @@ export default class App extends React.Component {
   };
 
   _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
+    this.setState({ isLoadingResourceComplete: true });
   };
 }
 
